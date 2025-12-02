@@ -1,65 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>AutoRent — Home</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="assets/css/global.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <span class="car-ico">🚗</span>
-      <h1>AutoRent</h1>
-    </div>
-    <nav class="nav">
-      <a href="pages/car-list/car-list.html">Cars</a>
-      <a href="pages/bookings/bookings.html">Bookings</a>
-      <a href="pages/profile/profile.html">Profile</a>
-      <a id="authLink" href="pages/login/login.html">Sign In</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <title>Car Rent — Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="car-ico">🚗</span>
+        <h1>Car Rent</h1>
+      </div>
+      <nav class="nav">
+        <a href="pages/car-list/car-list.html">Cars</a>
+        <a href="pages/bookings/bookings.html">Bookings</a>
+        <a href="pages/profile/profile.html">Profile</a>
+        <a id="authLink" href="pages/login/login.html">Sign In</a>
+      </nav>
+    </header>
 
-  <main class="hero">
-    <h2>Drive Your Dreams</h2>
-    <p>Premium car rentals with real-time availability and instant booking</p>
-    <div class="search-card">
-      <input id="searchBox" placeholder="Search make or model..." />
-      <button id="goCars">Search</button>
-    </div>
+    <main class="hero">
+      <h2>Drive Your Dreams</h2>
+      <p>Premium car rentals with real-time availability and instant booking</p>
+      <div class="search-card">
+        <input id="searchBox" placeholder="Search make or model..." />
+        <button id="goCars">Search</button>
+      </div>
 
-    <section class="preview-cards" id="previewCards"></section>
-  </main>
+      <section class="preview-cards" id="previewCards"></section>
+    </main>
 
-  <footer class="footer">© AutoRent — Demo</footer>
+    <footer class="footer">© AutoRent — Demo</footer>
 
-  <script src="assets/js/utils.js"></script>
-  <script>
-    document.getElementById('goCars').addEventListener('click', () => {
-      const q = encodeURIComponent(document.getElementById('searchBox').value || '');
-      window.location.href = `pages/car-list/car-list.html${q ? '?q='+q : ''}`;
-    });
+    <script src="assets/js/utils.js"></script>
+    <script>
+      document.getElementById("goCars").addEventListener("click", () => {
+        const q = encodeURIComponent(
+          document.getElementById("searchBox").value || ""
+        );
+        window.location.href = `pages/car-list/car-list.html${
+          q ? "?q=" + q : ""
+        }`;
+      });
 
-    // show a few cars preview by calling API if available
-    const API = 'http://localhost:8080/api';
-    fetch(API + '/cars').then(r => r.json()).then(data => {
-      const root = document.getElementById('previewCards');
-      root.innerHTML = '';
-      data.slice(0,2).forEach(car=>{
-        const el = document.createElement('div');
-        el.className = 'card-small';
-        el.innerHTML = `
-          <img src="${car.image || 'https://via.placeholder.com/800x400'}" />
+      // show a few cars preview by calling API if available
+      const API = "http://localhost:8080/api";
+      fetch(API + "/cars")
+        .then((r) => r.json())
+        .then((data) => {
+          const root = document.getElementById("previewCards");
+          root.innerHTML = "";
+          data.slice(0, 2).forEach((car) => {
+            const el = document.createElement("div");
+            el.className = "card-small";
+            el.innerHTML = `
+          <img src="${car.image || "https://via.placeholder.com/800x400"}" />
           <div class="meta">
             <h3>${car.make} ${car.model}</h3>
             <div class="price">$${car.price}/day</div>
             <a href="pages/car-details/car-details.html?id=${car.id}">View</a>
           </div>
         `;
-        root.appendChild(el);
-      });
-    }).catch(()=>{/* ignore if backend offline */});
-  </script>
-</body>
+            root.appendChild(el);
+          });
+        })
+        .catch(() => {
+          /* ignore if backend offline */
+        });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cars — AutoRent</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../../assets/css/reset.css" />
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="car-list.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span>🚗</span><h1>AutoRent</h1></div>
+    <nav><a href="../../index.html">Home</a> <a href="../bookings/bookings.html">Bookings</a> <a href="../profile/profile.html">Profile</a></nav>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input id="q" placeholder="Search make or model" />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="list" class="cards-grid"></div>
+  </main>
+
+  <script src="../../assets/js/utils.js"></script>
+  <script src="car-list.js"></script>
+</body>
+</html>

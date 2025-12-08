@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Register — Auto Prime Rental</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="auth-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Auto Prime Rental</a>
+      </div>
+    </header>
+
+    <main class="container auth-container">
+      <div class="auth-card">
+        <h2>Create account</h2>
+        <form id="registerForm" onsubmit="return registerSubmit(event)">
+          <label>Full name<input type="text" id="regName" required /></label>
+          <label>Email<input type="email" id="regEmail" required /></label>
+          <label
+            >Password<input type="password" id="regPass" required minlength="6"
+          /></label>
+          <label>Phone<input type="tel" id="regPhone" /></label>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Register</button>
+            <a class="btn btn-outline" href="login.html">Sign in</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/auth.js"></script>
+  </body>
+</html>

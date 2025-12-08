@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Auto Prime Rental — Home</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Auto Prime Rental</a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="cars.html">Cars</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a class="btn btn-primary" href="booking.html">Book Now</a>
+        </nav>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          onclick="toggleMobileMenu()"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Drive your dream car today</h1>
+          <p>Premium • Reliable • Affordable — Modern fleet, flexible plans.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="cars.html">Browse Cars</a>
+            <a class="btn btn-outline" href="booking.html">Quick Book</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/hero.jpg" alt="Hero car" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES / QUICK SEARCH -->
+    <section class="quick-search container">
+      <div class="search-card">
+        <h3>Quick booking</h3>
+        <form id="quickSearchForm" onsubmit="return quickSearch(event)">
+          <div class="row">
+            <input
+              type="text"
+              id="qs-location"
+              placeholder="Pickup city (e.g. Mumbai)"
+              required
+            />
+            <input type="date" id="qs-start" required />
+            <input type="date" id="qs-end" required />
+            <select id="qs-category">
+              <option value="">All categories</option>
+              <option value="economy">Economy</option>
+              <option value="suv">SUV</option>
+              <option value="luxury">Luxury</option>
+            </select>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary" type="submit">Find Cars</button>
+            <a class="btn btn-outline" href="cars.html">View All</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FEATURED CARS -->
+    <section class="section container">
+      <h2 class="section-title">Featured Cars</h2>
+      <div class="cards-grid" id="featuredGrid">
+        <!-- Sample cards: real content loaded by assets/js/script.js or replace images in assets/images/ -->
+        <article class="car-card">
+          <img src="assets/images/cars/car1.jpg" alt="BMW X6" />
+          <div class="card-body">
+            <h3>BMW X6</h3>
+            <p class="muted">Luxury • Automatic • 5 seats</p>
+            <div class="card-row">
+              <div class="price">₹3,200 / day</div>
+              <div>
+                <a class="btn btn-sm" href="booking.html?car=BMW%20X6">Rent</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="car-card">
+          <img src="assets/images/cars/car2.jpg" alt="Audi Q7" />
+          <div class="card-body">
+            <h3>Audi Q7</h3>
+            <p class="muted">Premium SUV • Automatic</p>
+            <div class="card-row">
+              <div class="price">₹3,500 / day</div>
+              <div>
+                <a class="btn btn-sm" href="booking.html?car=Audi%20Q7">Rent</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="car-card">
+          <img src="assets/images/cars/car3.jpg" alt="Mahindra Thar" />
+          <div class="card-body">
+            <h3>Mahindra Thar</h3>
+            <p class="muted">Offroad • Manual</p>
+            <div class="card-row">
+              <div class="price">₹2,500 / day</div>
+              <div>
+                <a class="btn btn-sm" href="booking.html?car=Mahindra%20Thar"
+                  >Rent</a
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT QUICK -->
+    <section class="section alt-bg">
+      <div class="container about-snapshot">
+        <div class="about-text">
+          <h2>Why choose Auto Prime</h2>
+          <p>
+            We maintain high vehicle standards, transparent pricing, and 24/7
+            support so your trip is worry-free. Choose from economy to luxury —
+            city drives to long tours.
+          </p>
+          <a href="about.html" class="btn btn-outline">Learn more</a>
+        </div>
+        <div class="about-features">
+          <div class="feature">
+            <strong>Clean vehicles</strong>
+            <p>Sanitized & maintained.</p>
+          </div>
+          <div class="feature">
+            <strong>Flexible pickup</strong>
+            <p>Airport, hotel, or location pickup.</p>
+          </div>
+          <div class="feature">
+            <strong>Instant booking</strong>
+            <p>Easy online reservations & confirmations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section container">
+      <h2 class="section-title">What customers say</h2>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial">
+          <p>
+            "Smooth booking and excellent car condition — highly recommended!"
+          </p>
+          <cite>— Priya R., Mumbai</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"Customer service helped reschedule quickly during a trip."</p>
+          <cite>— Rajesh K., Delhi</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- CTA / NEWSLETTER -->
+    <section class="section cta-newsletter alt-bg">
+      <div class="container cta-inner">
+        <div>
+          <h3>Get our offers & discounts</h3>
+          <p>Subscribe to our newsletter for seasonal coupons and deals.</p>
+        </div>
+        <form class="newsletter-form" action="newsletter.html" method="GET">
+          <input type="email" name="email" placeholder="Your email" required />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <a class="brand" href="index.html">Auto Prime Rental</a>
+          <p class="muted">Premium car rentals across India</p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="cars.html">Cars</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2025 Auto Prime Rental — All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

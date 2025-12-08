@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin Login — Auto Prime Rental</title>
+    <link rel="stylesheet" href="../assets/css/admin-panel.css" />
+  </head>
+  <body class="admin-auth">
+    <main class="admin-auth-card">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm" onsubmit="return adminLogin(event)">
+        <label>Username<input type="text" id="adminUser" required /></label>
+        <label>Password<input type="password" id="adminPass" required /></label>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Reports — Admin — Auto Prime Rental</title>
+    <link rel="stylesheet" href="../assets/css/admin-panel.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="admin-brand">AutoPrime Admin</div>
+        <nav>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="reports.html" class="active">Reports</a>
+          <a href="bookings.html">Bookings</a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <h1>Reports</h1>
+        </header>
+
+        <section class="section">
+          <h3>Export / Simulation</h3>
+          <p class="muted">
+            Generate sample CSV reports (frontend-only simulation).
+          </p>
+          <div class="form-actions">
+            <button class="btn btn-primary" onclick="downloadSampleReport()">
+              Download Bookings CSV
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

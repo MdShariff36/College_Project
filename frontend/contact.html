@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Auto Prime Rental</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Auto Prime Rental</a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="cars.html">Cars</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h1>Contact Us</h1>
+      <p class="lead">
+        We’d love to hear from you. Use the form or contact details below for
+        quick support.
+      </p>
+
+      <div class="row-two">
+        <div class="contact-card">
+          <h3>Customer support</h3>
+          <p>
+            Email:
+            <a href="mailto:support@autoprimerental.com"
+              >support@autoprimerental.com</a
+            >
+          </p>
+          <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p>Address: 12 MG Road, Business District, Mumbai</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Send a message</h3>
+          <form id="contactForm" onsubmit="return submitContactForm(event)">
+            <label
+              >Your name<input type="text" id="contactName" required
+            /></label>
+            <label
+              >Email<input type="email" id="contactEmail" required
+            /></label>
+            <label
+              >Message<textarea
+                id="contactMessage"
+                rows="5"
+                required
+              ></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                Send message
+              </button>
+              <button class="btn btn-outline" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <a class="brand" href="index.html">Auto Prime Rental</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

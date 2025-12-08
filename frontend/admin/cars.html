@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Manage Cars — Admin — Auto Prime Rental</title>
+    <link rel="stylesheet" href="../assets/css/admin-panel.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="admin-brand">AutoPrime Admin</div>
+        <nav>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="cars.html" class="active">Cars</a>
+          <a href="add-car.html">Add Car</a>
+          <a href="bookings.html">Bookings</a>
+          <a href="users.html">Users</a>
+          <a href="reports.html">Reports</a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <h1>Manage Cars</h1>
+          <div class="admin-actions">
+            <button class="btn btn-sm" onclick="location.href='add-car.html'">
+              Add Car
+            </button>
+          </div>
+        </header>
+
+        <section class="section">
+          <div id="carsTable" class="table-wrap">
+            <!-- admin.js will inject the cars list -->
+            <p class="muted">No cars yet. Add a car to get started.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

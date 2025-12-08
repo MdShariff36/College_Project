@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Booking — Auto Prime Rental</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Auto Prime Rental</a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="cars.html">Cars</a>
+          <a href="booking.html" class="active">Booking</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h1>Book a car</h1>
+      <p class="lead">
+        Fill details below to reserve your car. You will get a confirmation
+        after submission.
+      </p>
+
+      <form
+        id="bookingForm"
+        class="booking-form"
+        onsubmit="return submitBookingForm(event)"
+      >
+        <div class="row-two">
+          <label
+            >Car model
+            <input
+              type="text"
+              id="bookCar"
+              placeholder="e.g. BMW X6"
+              value=""
+            />
+          </label>
+          <label
+            >Pickup city
+            <input type="text" id="bookCity" placeholder="Your city" required />
+          </label>
+        </div>
+
+        <div class="row-two">
+          <label
+            >Start date
+            <input type="date" id="bookStart" required />
+          </label>
+          <label
+            >End date
+            <input type="date" id="bookEnd" required />
+          </label>
+        </div>
+
+        <div class="row-two">
+          <label
+            >Full name
+            <input
+              type="text"
+              id="bookName"
+              placeholder="Your full name"
+              required
+            />
+          </label>
+          <label
+            >Phone
+            <input
+              type="tel"
+              id="bookPhone"
+              placeholder="+91xxxxxxxxxx"
+              required
+            />
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Confirm Booking</button>
+          <a class="btn btn-outline" href="cars.html">Choose car</a>
+        </div>
+      </form>
+
+      <section class="note">
+        <h3>Notes</h3>
+        <ul>
+          <li>Bookings are subject to availability.</li>
+          <li>Driver and insurance options can be arranged on request.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <a class="brand" href="index.html">Auto Prime Rental</a>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

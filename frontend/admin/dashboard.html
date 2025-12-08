@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin Dashboard — Auto Prime Rental</title>
+    <link rel="stylesheet" href="../assets/css/admin-panel.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="admin-brand">AutoPrime Admin</div>
+        <nav>
+          <a href="dashboard.html" class="active">Dashboard</a>
+          <a href="cars.html">Cars</a>
+          <a href="add-car.html">Add Car</a>
+          <a href="bookings.html">Bookings</a>
+          <a href="users.html">Users</a>
+          <a href="reports.html">Reports</a>
+          <a href="../index.html" class="logout">View Site</a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <h1>Dashboard</h1>
+          <div class="admin-actions">
+            <span id="adminName">Admin</span>
+          </div>
+        </header>
+
+        <section class="admin-stats">
+          <div class="stat">
+            <h3 id="statCars">0</h3>
+            <p>Cars</p>
+          </div>
+          <div class="stat">
+            <h3 id="statUsers">0</h3>
+            <p>Users</p>
+          </div>
+          <div class="stat">
+            <h3 id="statBookings">0</h3>
+            <p>Bookings</p>
+          </div>
+        </section>
+
+        <section class="admin-recent section">
+          <h2>Recent Bookings</h2>
+          <div id="adminRecentBookings" class="table-wrap">
+            <p class="muted">No bookings yet.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

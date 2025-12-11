@@ -2,70 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Profile — Auto Prime</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Profile — Auto Prime Rental</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/user-panel.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="../index.html">Auto Prime Rental</a>
-        <nav class="main-nav">
-          <a href="../index.html">Home</a>
-          <a href="../cars.html">Cars</a>
-          <a href="dashboard.html">Dashboard</a>
-          <a href="profile.html" class="active">Profile</a>
+    <div style="display: flex">
+      <aside class="user-sidebar">
+        <h3>User</h3>
+        <nav
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+          "
+        >
+          <a href="dashboard.html">Dashboard</a
+          ><a href="my-bookings.html">My Bookings</a
+          ><a href="profile.html">Profile</a>
         </nav>
-      </div>
-    </header>
-
-    <main class="container section">
-      <h1>Profile Settings</h1>
-      <form
-        id="profileForm"
-        class="profile-form"
-        onsubmit="return saveProfile(event)"
-      >
-        <div class="row-two">
-          <label
-            >Full name
-            <input type="text" id="profileName" required />
-          </label>
-          <label
-            >Email
-            <input type="email" id="profileEmail" required />
-          </label>
-        </div>
-
-        <div class="row-two">
-          <label
-            >Phone
-            <input type="tel" id="profilePhone" />
-          </label>
-          <label
-            >City
-            <input type="text" id="profileCity" />
-          </label>
-        </div>
-
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Save Profile</button>
-          <button class="btn btn-outline" type="button" onclick="logoutUser()">
-            Logout
-          </button>
-        </div>
-      </form>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <small>© 2025 Auto Prime Rental</small>
-      </div>
-    </footer>
-
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/auth.js"></script>
-    <script src="../assets/js/user.js"></script>
+      </aside>
+      <section class="user-main" style="flex: 1">
+        <header class="user-header"><h2>Profile</h2></header>
+        <main style="padding: 18px">
+          <form
+            class="card-small"
+            onsubmit="event.preventDefault(); alert('Profile saved (demo)')"
+          >
+            <label class="muted">Full name</label
+            ><input
+              style="
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                margin-top: 6px;
+              "
+              value="Demo User"
+            />
+            <label class="muted" style="margin-top: 8px">Email</label
+            ><input
+              style="
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                margin-top: 6px;
+              "
+              value="user@example.com"
+            />
+            <div style="margin-top: 12px">
+              <button class="btn">Save</button>
+            </div>
+          </form>
+        </main>
+      </section>
+    </div>
   </body>
 </html>

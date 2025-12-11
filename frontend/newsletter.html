@@ -2,44 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Newsletter — Auto Prime Rental</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html">Auto Prime Rental</a>
+      <div class="container">
+        <div class="logo">
+          <img src="assets/images/logo.png" /> <strong>Auto Prime</strong>
+        </div>
+        <nav class="nav"><a href="index.html">Home</a></nav>
       </div>
     </header>
 
-    <main class="container section">
-      <h1>Subscribe to our newsletter</h1>
-      <p class="lead">
-        Thanks for your interest! Enter your email below to receive offers and
-        updates.
-      </p>
+    <main class="container" style="padding: 40px 0">
+      <h1>Subscribe to our Newsletter</h1>
 
-      <form class="newsletter-card" onsubmit="return newsletterSubmit(event)">
+      <form class="card-small" style="margin-top: 20px; max-width: 520px">
+        <label>Email Address</label>
         <input
           type="email"
-          id="newsletterEmail"
-          placeholder="you@example.com"
-          required
+          style="
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 8px;
+          "
         />
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Subscribe</button>
-          <a class="btn btn-outline" href="index.html">Back to home</a>
-        </div>
+        <button class="btn" style="margin-top: 12px">Subscribe</button>
       </form>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <small>© 2025 Auto Prime Rental</small>
-      </div>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
+    <footer class="site-footer">© Auto Prime Rental 2025</footer>
   </body>
 </html>

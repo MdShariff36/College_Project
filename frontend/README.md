@@ -1,20 +1,15 @@
-# Auto Prime Rental — Frontend Skeleton
+# Auto Prime Rental — Local dev notes
 
-This is a static frontend skeleton for a car rental web app.
-Theme: white + orange + black.
+This project contains:
 
-## Folder structure
+- Public pages in root
+- User panel in /user
+- Admin panel in /admin
+- Assets in /assets (css, js, images)
 
-See the `auto-prime-rental/` tree (index.html, about.html, cars.html, booking.html, contact.html, login.html, register.html, newsletter.html, faq.html)
-Includes `user/` and `admin/` panels and `assets/` for CSS/JS/images.
+Enhancements included:
 
-## How to run
+- Premium overlay effects, highlight badges, floating specs, trust row, tariff tables
+- Front-end demo JS in assets/js/\*.js
 
-Open `index.html` in your browser. This is a static project — no backend required.
-Some functionality (auth, bookings, admin) is simulated using `localStorage`.
-
-## Notes
-
-- Admin demo credentials: username `admin`, password `admin123`.
-- Replace images in `assets/images/` and `assets/images/cars/` with your own.
-- This project is original code inspired by your referenced layout, not a verbatim copy.
+To run: open index.html locally. Replace demo actions with real backend endpoints as needed.

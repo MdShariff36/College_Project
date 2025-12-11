@@ -2,44 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>My Bookings — Auto Prime</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>My Bookings — Auto Prime Rental</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/user-panel.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="../index.html">Auto Prime Rental</a>
-        <nav class="main-nav">
-          <a href="../index.html">Home</a>
-          <a href="../cars.html">Cars</a>
-          <a href="dashboard.html">Dashboard</a>
-          <a href="my-bookings.html" class="active">My Bookings</a>
-          <a href="profile.html">Profile</a>
+    <div style="display: flex">
+      <aside class="user-sidebar">
+        <h3>User</h3>
+        <nav
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+          "
+        >
+          <a href="dashboard.html">Dashboard</a
+          ><a href="my-bookings.html">My Bookings</a
+          ><a href="profile.html">Profile</a>
         </nav>
-      </div>
-    </header>
+      </aside>
+      <section class="user-main" style="flex: 1">
+        <header class="user-header"><h2>My Bookings</h2></header>
+        <main style="padding: 18px">
+          <div class="card-small">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Car</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>BMW X6</td>
+                  <td>2025-12-01</td>
+                  <td>2025-12-05</td>
+                  <td><button class="cancel-booking">Cancel</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </section>
+    </div>
 
-    <main class="container section">
-      <h1>My Bookings</h1>
-      <p class="lead">
-        All bookings you have made — status, dates, and actions.
-      </p>
-
-      <div id="bookingsList" class="cards-grid">
-        <!-- JS will populate booking cards from localStorage -->
-        <p class="muted">No bookings yet. Make your first booking!</p>
-      </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <small>© 2025 Auto Prime Rental</small>
-      </div>
-    </footer>
-
-    <script src="../assets/js/script.js"></script>
     <script src="../assets/js/user.js"></script>
   </body>
 </html>

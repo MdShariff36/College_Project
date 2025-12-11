@@ -2,57 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Admin Dashboard — Auto Prime</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Admin Dashboard — Auto Prime Rental</title>
     <link rel="stylesheet" href="../assets/css/admin-panel.css" />
   </head>
   <body>
-    <div class="admin-layout">
+    <div class="admin-shell">
       <aside class="admin-sidebar">
-        <div class="admin-brand">AutoPrime Admin</div>
-        <nav>
-          <a href="dashboard.html" class="active">Dashboard</a>
+        <h3>Admin</h3>
+        <nav
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+          "
+        >
+          <a href="dashboard.html">Dashboard</a>
           <a href="cars.html">Cars</a>
           <a href="add-car.html">Add Car</a>
           <a href="bookings.html">Bookings</a>
           <a href="users.html">Users</a>
-          <a href="reports.html">Reports</a>
-          <a href="../index.html" class="logout">View Site</a>
         </nav>
       </aside>
 
-      <main class="admin-main">
-        <header class="admin-topbar">
-          <h1>Dashboard</h1>
-          <div class="admin-actions">
-            <span id="adminName">Admin</span>
-          </div>
-        </header>
+      <section class="admin-content">
+        <div class="admin-top">
+          <h2>Dashboard</h2>
+          <div class="muted">Welcome back, Admin</div>
+        </div>
 
-        <section class="admin-stats">
-          <div class="stat">
-            <h3 id="statCars">0</h3>
-            <p>Cars</p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+          "
+        >
+          <div class="admin-card">
+            <h3>Total bookings</h3>
+            <p class="muted">128</p>
           </div>
-          <div class="stat">
-            <h3 id="statUsers">0</h3>
-            <p>Users</p>
+          <div class="admin-card">
+            <h3>Active cars</h3>
+            <p class="muted">52</p>
           </div>
-          <div class="stat">
-            <h3 id="statBookings">0</h3>
-            <p>Bookings</p>
+          <div class="admin-card">
+            <h3>Revenue</h3>
+            <p class="muted">₹1,240,000</p>
           </div>
-        </section>
-
-        <section class="admin-recent section">
-          <h2>Recent Bookings</h2>
-          <div id="adminRecentBookings" class="table-wrap">
-            <p class="muted">No bookings yet.</p>
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </div>
-
     <script src="../assets/js/admin.js"></script>
   </body>
 </html>

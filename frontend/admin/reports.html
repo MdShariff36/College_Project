@@ -2,40 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Reports — Admin — Auto Prime Rental</title>
+    <title>Reports — Admin</title>
     <link rel="stylesheet" href="../assets/css/admin-panel.css" />
   </head>
+
   <body>
-    <div class="admin-layout">
+    <div class="admin-shell">
       <aside class="admin-sidebar">
-        <div class="admin-brand">AutoPrime Admin</div>
+        <h3>Admin</h3>
         <nav>
           <a href="dashboard.html">Dashboard</a>
-          <a href="reports.html" class="active">Reports</a>
+          <a href="cars.html">Cars</a>
           <a href="bookings.html">Bookings</a>
+          <a href="users.html">Users</a>
+          <a href="report.html">Reports</a>
         </nav>
       </aside>
 
-      <main class="admin-main">
-        <header class="admin-topbar">
-          <h1>Reports</h1>
-        </header>
+      <section class="admin-content">
+        <h2>Reports</h2>
 
-        <section class="section">
-          <h3>Export / Simulation</h3>
-          <p class="muted">
-            Generate sample CSV reports (frontend-only simulation).
-          </p>
-          <div class="form-actions">
-            <button class="btn btn-primary" onclick="downloadSampleReport()">
-              Download Bookings CSV
-            </button>
-          </div>
-        </section>
-      </main>
+        <div class="admin-card" style="margin-top: 18px">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Total Bookings</th>
+                <th>Revenue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>January</td>
+                <td>82</td>
+                <td>₹720,000</td>
+              </tr>
+              <tr>
+                <td>February</td>
+                <td>73</td>
+                <td>₹630,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
-
-    <script src="../assets/js/admin.js"></script>
   </body>
 </html>

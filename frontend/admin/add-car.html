@@ -2,68 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Add Car — Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Add Car — Admin — Auto Prime Rental</title>
     <link rel="stylesheet" href="../assets/css/admin-panel.css" />
   </head>
   <body>
-    <div class="admin-layout">
-      <aside class="admin-sidebar">
-        <div class="admin-brand">AutoPrime Admin</div>
-        <nav>
-          <a href="dashboard.html">Dashboard</a>
-          <a href="cars.html">Cars</a>
-          <a href="add-car.html" class="active">Add Car</a>
-          <a href="bookings.html">Bookings</a>
-        </nav>
-      </aside>
-
-      <main class="admin-main">
-        <header class="admin-topbar">
-          <h1>Add New Car</h1>
-        </header>
-
-        <section class="section">
-          <form
-            id="addCarForm"
-            class="add-car-form"
-            onsubmit="return addCar(event)"
-          >
-            <label>Model<input type="text" id="carModel" required /></label>
-            <label
-              >Category
-              <select id="carCategory">
-                <option value="economy">Economy</option>
-                <option value="suv">SUV</option>
-                <option value="luxury">Luxury</option>
-              </select>
-            </label>
-            <label
-              >Transmission
-              <select id="carTransmission">
-                <option value="Automatic">Automatic</option>
-                <option value="Manual">Manual</option>
-              </select>
-            </label>
-            <label
-              >Price per day (INR)<input type="number" id="carPrice" required
-            /></label>
-            <label
-              >Image URL<input
-                type="text"
-                id="carImage"
-                placeholder="../assets/images/cars/carX.jpg"
-            /></label>
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Add Car</button>
-              <button class="btn btn-outline" type="reset">Reset</button>
-            </div>
-          </form>
-        </section>
-      </main>
+    <div class="admin-shell">
+      <aside class="admin-sidebar"><h3>Admin</h3></aside>
+      <section class="admin-content">
+        <h2>Add Car</h2>
+        <form id="add-car-form" class="admin-card" style="max-width: 720px">
+          <div class="form-row">
+            <input name="model" placeholder="Model" style="flex: 1" />
+          </div>
+          <div class="form-row">
+            <input name="category" placeholder="Category" /><input
+              name="price"
+              placeholder="Price/day"
+            />
+          </div>
+          <div class="form-row">
+            <input name="image" placeholder="Image path" />
+          </div>
+          <div style="margin-top: 8px">
+            <button class="btn">Add Car</button>
+          </div>
+        </form>
+      </section>
     </div>
-
     <script src="../assets/js/admin.js"></script>
   </body>
 </html>

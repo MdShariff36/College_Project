@@ -2,36 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Bookings — Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Bookings — Admin — Auto Prime Rental</title>
     <link rel="stylesheet" href="../assets/css/admin-panel.css" />
   </head>
   <body>
-    <div class="admin-layout">
-      <aside class="admin-sidebar">
-        <div class="admin-brand">AutoPrime Admin</div>
-        <nav>
-          <a href="dashboard.html">Dashboard</a>
-          <a href="cars.html">Cars</a>
-          <a href="add-car.html">Add Car</a>
-          <a href="bookings.html" class="active">Bookings</a>
-          <a href="users.html">Users</a>
-        </nav>
-      </aside>
-
-      <main class="admin-main">
-        <header class="admin-topbar">
-          <h1>All Bookings</h1>
-        </header>
-
-        <section class="section">
-          <div id="allBookings" class="table-wrap">
-            <p class="muted">No bookings in the system yet.</p>
-          </div>
-        </section>
-      </main>
+    <div class="admin-shell">
+      <aside class="admin-sidebar"><h3>Admin</h3></aside>
+      <section class="admin-content">
+        <h2>Bookings</h2>
+        <div class="admin-card" style="margin-top: 12px">
+          <table class="table" style="width: 100%">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Car</th>
+                <th>From</th>
+                <th>To</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>user@example.com</td>
+                <td>BMW X6</td>
+                <td>2025-12-01</td>
+                <td>2025-12-05</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
-
-    <script src="../assets/js/admin.js"></script>
   </body>
 </html>

@@ -2,39 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Login — Auto Prime</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Login — Auto Prime Rental</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="auth-page">
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html">Auto Prime Rental</a>
+  <body>
+    <main class="container" style="padding: 40px 20px; max-width: 680px">
+      <div style="text-align: center; margin-bottom: 12px">
+        <img src="assets/images/logo.png" alt="logo" style="height: 46px" />
       </div>
-    </header>
-
-    <main class="container auth-container">
-      <div class="auth-card">
-        <h2>Sign in</h2>
-        <form id="loginForm" onsubmit="return loginSubmit(event)">
-          <label>Email<input type="email" id="loginEmail" required /></label>
-          <label
-            >Password<input type="password" id="loginPass" required
-          /></label>
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Login</button>
-            <a class="btn btn-outline" href="register.html">Register</a>
-          </div>
-        </form>
-        <p class="muted">Or sign in with</p>
-        <div class="social-login">
-          <button class="btn btn-social">Google</button>
-          <button class="btn btn-social">Facebook</button>
+      <form id="login-form" class="card-small" style="padding: 20px">
+        <h2>Login</h2>
+        <label class="muted">Email</label
+        ><input
+          name="email"
+          type="email"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 6px;
+          "
+        />
+        <label class="muted" style="margin-top: 8px">Password</label
+        ><input
+          name="password"
+          type="password"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 6px;
+          "
+        />
+        <div style="margin-top: 12px">
+          <button class="btn" type="submit">Login</button>
         </div>
-      </div>
+        <div style="margin-top: 10px; font-size: 0.95rem">
+          Don't have an account? <a href="register.html">Register</a>
+        </div>
+      </form>
     </main>
-
-    <script src="assets/js/script.js"></script>
     <script src="assets/js/auth.js"></script>
   </body>
 </html>

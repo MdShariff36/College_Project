@@ -2,108 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Booking — Auto Prime</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Booking — Auto Prime Rental</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html">Auto Prime Rental</a>
-        <nav class="main-nav">
-          <a href="index.html">Home</a>
-          <a href="cars.html">Cars</a>
-          <a href="booking.html" class="active">Booking</a>
-          <a href="contact.html">Contact</a>
+      <div class="container">
+        <div class="logo">
+          <img src="assets/images/logo.png" /><strong>Auto Prime</strong>
+        </div>
+        <nav class="nav">
+          <a href="index.html">Home</a><a href="cars.html">Cars</a
+          ><a href="services.html">Services</a><a href="about.html">About</a
+          ><a href="contact.html">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main class="container section">
-      <h1>Book a car</h1>
-      <p class="lead">
-        Fill details below to reserve your car. You will get a confirmation
-        after submission.
-      </p>
-
+    <main class="container" style="padding: 28px 20px">
+      <h1>Book a Car</h1>
       <form
-        id="bookingForm"
-        class="booking-form"
-        onsubmit="return submitBookingForm(event)"
+        id="booking-form"
+        class="card-small"
+        style="margin-top: 12px; max-width: 720px"
       >
-        <div class="row-two">
-          <label
-            >Car model
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <label style="flex: 1">
+            <div class="muted">Car</div>
             <input
-              type="text"
-              id="bookCar"
-              placeholder="e.g. BMW X6"
-              value=""
+              id="booking-carname"
+              name="car"
+              placeholder="Car model"
+              style="
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+              "
             />
           </label>
-          <label
-            >Pickup city
-            <input type="text" id="bookCity" placeholder="Your city" required />
-          </label>
-        </div>
 
-        <div class="row-two">
-          <label
-            >Start date
-            <input type="date" id="bookStart" required />
-          </label>
-          <label
-            >End date
-            <input type="date" id="bookEnd" required />
-          </label>
-        </div>
-
-        <div class="row-two">
-          <label
-            >Full name
+          <label style="width: 170px">
+            <div class="muted">Pickup date</div>
             <input
-              type="text"
-              id="bookName"
-              placeholder="Your full name"
-              required
+              name="pickup"
+              type="date"
+              style="
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+              "
             />
           </label>
-          <label
-            >Phone
+
+          <label style="width: 170px">
+            <div class="muted">Return date</div>
             <input
-              type="tel"
-              id="bookPhone"
-              placeholder="+91xxxxxxxxxx"
-              required
+              name="return"
+              type="date"
+              style="
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+              "
             />
           </label>
         </div>
 
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Confirm Booking</button>
-          <a class="btn btn-outline" href="cars.html">Choose car</a>
+        <div style="margin-top: 12px">
+          <button class="btn" type="submit">Confirm Booking</button>
         </div>
       </form>
-
-      <section class="note">
-        <h3>Notes</h3>
-        <ul>
-          <li>Bookings are subject to availability.</li>
-          <li>Driver and insurance options can be arranged on request.</li>
-        </ul>
-      </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-left">
-          <a class="brand" href="index.html">Auto Prime Rental</a>
-        </div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
+      <div class="container">© Auto Prime Rental 2025</div>
     </footer>
 
     <script src="assets/js/script.js"></script>

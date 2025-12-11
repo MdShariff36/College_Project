@@ -1,90 +1,90 @@
-/* Common site JS (public) */
+/* assets/js/script.js
+   General site JS: auto-badges, fill specs, simple interactivity
+*/
 
-// mobile menu toggle (simple)
-function toggleMobileMenu() {
-  const nav = document.querySelector(".main-nav");
-  if (!nav) return;
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+document.addEventListener("DOMContentLoaded", function () {
+  decorateCarCards();
+  wireBookingForms();
+  initMobileMenu();
+});
+
+/* Auto add badges & fill spec boxes */
+function decorateCarCards() {
+  document.querySelectorAll(".car-card").forEach((card) => {
+    // add badge if missing based on data attributes
+    if (!card.querySelector(".car-badge")) {
+      const cat = (card.dataset.category || "").toLowerCase();
+      const price = Number(card.dataset.price || 0);
+      let badgeText = "";
+      if (cat.includes("luxury")) badgeText = "Premium";
+      else if (cat.includes("new")) badgeText = "New";
+      else if (price && price > 3000) badgeText = "Popular";
+      if (badgeText) {
+        const s = document.createElement("span");
+        s.className = "car-badge";
+        s.innerText = badgeText;
+        const media = card.querySelector(".media-wrap") || card;
+        media.appendChild(s);
+      }
+    }
+
+    // ensure overlay exists
+    if (!card.querySelector(".overlay")) {
+      const ov = document.createElement("div");
+      ov.className = "overlay";
+      (card.querySelector(".media-wrap") || card).appendChild(ov);
+    }
+
+    // fill or create specs box
+    let specs = card.querySelector(".car-specs-float");
+    if (!specs) {
+      specs = document.createElement("div");
+      specs.className = "car-specs-float";
+      (card.querySelector(".media-wrap") || card).appendChild(specs);
+    }
+    const seats =
+      card.dataset.seats || extractFromText(card, /(\d+)\s*seat/i) || "—";
+    const trans = card.dataset.transmission || card.dataset.trans || "—";
+    const fuel = card.dataset.fuel || "—";
+    specs.innerHTML = `
+      <div class="spec-row"><span class="spec-icon">🚗</span><small><strong>Seats</strong> ${seats}</small></div>
+      <div class="spec-row"><span class="spec-icon">⚙️</span><small><strong>Transmission</strong> ${trans}</small></div>
+      <div class="spec-row"><span class="spec-icon">⛽</span><small><strong>Fuel</strong> ${fuel}</small></div>
+    `;
+  });
+}
+function extractFromText(el, re) {
+  const t = el.innerText || "";
+  const m = t.match(re);
+  return m ? m[1] : null;
 }
 
-// Quick search on home page
-function quickSearch(e) {
-  e.preventDefault();
-  const city = document.getElementById("qs-location").value;
-  const start = document.getElementById("qs-start").value;
-  const end = document.getElementById("qs-end").value;
-  const cat = document.getElementById("qs-category").value;
-  // Simple redirect to cars page with query params
-  const params = new URLSearchParams({ city, start, end, cat });
-  window.location.href = "cars.html?" + params.toString();
-  return false;
-}
-
-// Booking form handler (booking.html)
-function submitBookingForm(e) {
-  e.preventDefault();
-  const car = document.getElementById("bookCar").value || "Not specified";
-  const start = document.getElementById("bookStart").value;
-  const end = document.getElementById("bookEnd").value;
-  const name = document.getElementById("bookName").value;
-  const phone = document.getElementById("bookPhone").value;
-
-  const booking = {
-    id: Date.now(),
-    car,
-    start,
-    end,
-    name,
-    phone,
-    status: "pending",
-  };
-  // store in localStorage demo
-  const all = JSON.parse(localStorage.getItem("bookings") || "[]");
-  all.push(booking);
-  localStorage.setItem("bookings", JSON.stringify(all));
-  alert("Booking submitted — check My Bookings for details.");
-  window.location.href = "user/my-bookings.html";
-  return false;
-}
-
-// Contact form handler
-function submitContactForm(e) {
-  e.preventDefault();
-  const name = document.getElementById("contactName").value;
-  const email = document.getElementById("contactEmail").value;
-  const msg = document.getElementById("contactMessage").value;
-  // demo: store contact messages locally
-  const msgs = JSON.parse(localStorage.getItem("messages") || "[]");
-  msgs.push({ id: Date.now(), name, email, msg });
-  localStorage.setItem("messages", JSON.stringify(msgs));
-  alert("Thanks — we received your message. We will be in touch.");
-  e.target.reset();
-  return false;
-}
-
-// Newsletter
-function newsletterSubmit(e) {
-  e.preventDefault();
-  const email = document.getElementById("newsletterEmail").value;
-  const subs = JSON.parse(localStorage.getItem("newsletter") || "[]");
-  subs.push({ id: Date.now(), email });
-  localStorage.setItem("newsletter", JSON.stringify(subs));
-  alert("Subscribed — check your inbox for coupons.");
-  window.location.href = "index.html";
-  return false;
-}
-
-// Simple helper: parse query string for pre-filling booking page
-function prefillBookingFromQuery() {
+/* Wire booking forms to prefill car */
+function wireBookingForms() {
+  // if booking page has ?car= param, prefill
   const params = new URLSearchParams(window.location.search);
-  const car = params.get("car");
-  if (car) {
-    const input = document.getElementById("bookCar");
-    if (input) input.value = car;
+  const carName = params.get("car");
+  if (carName) {
+    const el = document.querySelector("#booking-carname");
+    if (el) el.value = carName;
+  }
+
+  // simple demo submit
+  const form = document.querySelector("#booking-form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Booking submitted (demo). Implement server-side processing.");
+      form.reset();
+    });
   }
 }
 
-// Run on pages
-document.addEventListener("DOMContentLoaded", () => {
-  prefillBookingFromQuery();
-});
+/* mobile menu quick */
+function initMobileMenu() {
+  const btn = document.querySelector("#mobile-menu-btn");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    document.querySelector(".nav")?.classList.toggle("open");
+  });
+}

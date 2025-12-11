@@ -2,35 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Users — Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Users — Admin — Auto Prime Rental</title>
     <link rel="stylesheet" href="../assets/css/admin-panel.css" />
   </head>
   <body>
-    <div class="admin-layout">
-      <aside class="admin-sidebar">
-        <div class="admin-brand">AutoPrime Admin</div>
-        <nav>
-          <a href="dashboard.html">Dashboard</a>
-          <a href="cars.html">Cars</a>
-          <a href="bookings.html">Bookings</a>
-          <a href="users.html" class="active">Users</a>
-        </nav>
-      </aside>
-
-      <main class="admin-main">
-        <header class="admin-topbar">
-          <h1>Registered Users</h1>
-        </header>
-
-        <section class="section">
-          <div id="usersTable" class="table-wrap">
-            <p class="muted">No users registered yet.</p>
-          </div>
-        </section>
-      </main>
+    <div class="admin-shell">
+      <aside class="admin-sidebar"><h3>Admin</h3></aside>
+      <section class="admin-content">
+        <h2>Users</h2>
+        <div class="admin-card" style="margin-top: 12px">
+          <table class="table" style="width: 100%">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Joined</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>user@example.com</td>
+                <td>2025-06-12</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
-
-    <script src="../assets/js/admin.js"></script>
   </body>
 </html>
